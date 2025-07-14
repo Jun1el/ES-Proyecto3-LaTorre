@@ -6,4 +6,3 @@ pytest-mock
 pytest-cov
 flake8
 black
-shellcheck
