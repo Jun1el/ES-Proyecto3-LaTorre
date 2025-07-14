@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/task', methods=['POST'])
 def task():
     data = request.json
-    # Procesa y retorna el mismo trace_id
+    # Procesa y retorna el mismo trace_id para enviar a otros servicios
     return jsonify({"data": f"A:{data['data']}", "trace_id": data["trace_id"]})
 
 if __name__ == '__main__':
