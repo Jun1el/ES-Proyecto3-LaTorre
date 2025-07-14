@@ -1,3 +1,9 @@
 Flask
 requests
 PyYAML
+pytest
+pytest-mock
+pytest-cov
+flake8
+black
+shellcheck
