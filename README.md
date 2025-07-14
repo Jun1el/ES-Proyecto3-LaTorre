@@ -103,3 +103,24 @@ if __name__ == '__main__':
 ```
 
 ![Texto alternativo](imagenes/Docker-image-1.png)
+
+## Parte 3 Bash CI/CD mini-pipeline 
+- black --check src/ y flake8 src/
+- shellcheck scripts/ci.sh 
+```bash
+# Ejecutamos black para formatear el codigo
+run_black() {
+    echo "Ejecutando black..."
+    black src/
+    if [ $? -ne 0 ]; then
+        echo "Error black encontro problemas de formato."
+        exit 1
+    fi
+}
+```
+
+## Parte 4 Testing profundo 
+
+- Unit tests 
+    - Para git_graph.py usar @pytest.mark.parametrize con DAGs sinteticos y medir densidad y critical path 
+    - Para mesh.py usar  monkeypatch.autospec y request-mock para simular servicios A/B/C apagados  
