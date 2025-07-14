@@ -1,0 +1,26 @@
+networks:
+  mesh-net: {}
+services:
+  service_a:
+    image: python:3.9
+    networks:
+    - mesh-net
+    ports:
+    - 5001:5001
+  service_b:
+    depends_on:
+    - service_a
+    image: python:3.9
+    networks:
+    - mesh-net
+    ports:
+    - 5002:5002
+  service_c:
+    depends_on:
+    - service_b
+    image: python:3.9
+    networks:
+    - mesh-net
+    ports:
+    - 5003:5003
+version: '3'
